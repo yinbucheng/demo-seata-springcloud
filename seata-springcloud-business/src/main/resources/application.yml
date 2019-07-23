@@ -22,6 +22,7 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 120000 #断路切换超时
+          strategy: SEMAPHORE
 #========================================eureka config=====================================
 eureka:
   client:

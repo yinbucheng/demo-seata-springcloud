@@ -6,19 +6,33 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="seata-springcloud-account" />
-        <module name="seata-springcloud-account-api" />
+        <module name="seata-springcloud-order-api" />
+        <module name="seata-springcloud-storage-api" />
+        <module name="seata-springcloud-order" />
         <module name="seata-springcloud-business" />
-        <module name="seata-springcloud-business-api" />
         <module name="seata-springcloud-common" />
         <module name="seata-springcloud-eureka" />
-        <module name="seata-springcloud-order" />
-        <module name="seata-springcloud-order-api" />
         <module name="seata-springcloud-storage" />
-        <module name="seata-springcloud-storage-api" />
+        <module name="seata-springcloud-account-api" />
+        <module name="seata-springcloud-business-api" />
         <module name="seata-springcloud-web" />
+        <module name="seata-springcloud-account" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="seata-springcloud" target="1.8" />
+      <module name="seata-springcloud-account" target="1.8" />
+      <module name="seata-springcloud-account-api" target="1.8" />
+      <module name="seata-springcloud-business" target="1.8" />
+      <module name="seata-springcloud-business-api" target="1.8" />
+      <module name="seata-springcloud-common" target="1.8" />
+      <module name="seata-springcloud-eureka" target="1.8" />
+      <module name="seata-springcloud-order" target="1.8" />
+      <module name="seata-springcloud-order-api" target="1.8" />
+      <module name="seata-springcloud-storage" target="1.8" />
+      <module name="seata-springcloud-storage-api" target="1.8" />
+      <module name="seata-springcloud-web" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
