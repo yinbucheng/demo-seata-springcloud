@@ -1,0 +1,1 @@
+insert ignore business_account(`accountId`,`amount`,`accountName`,`logicDel`,`remark`) values('yinchong',1000,'yinchong','个人测试','个人测试');

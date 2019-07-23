@@ -1,16 +1,17 @@
 CREATE TABLE `BUSINESS_ACCOUNT` (
-  `accountId` varchar(32) NOT NULL COMMENT '主键uuid',
-  `amount` decimal(18,6) DEFAULT NULL COMMENT '金额',
-  `accountName` varchar(32) DEFAULT NULL COMMENT '账户名称',
-  `logicDel` char(1) DEFAULT NULL COMMENT '逻辑删除 Y:删除 N:未删除',
-  `remark` varchar(240) DEFAULT NULL COMMENT '备注',
-  PRIMARY KEY (`accountId`)
+`accountId` varchar(32) NOT NULL COMMENT '主键uuid',
+`amount` int DEFAULT NULL COMMENT '金额(单位为分)',
+`accountName` varchar(32) DEFAULT NULL COMMENT '账户名称',
+`logicDel` char(1) DEFAULT NULL COMMENT '逻辑删除 Y:删除 N:未删除',
+`remark` varchar(240) DEFAULT NULL COMMENT '备注',
+PRIMARY KEY (`accountId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `BUSINESS_ORDER` (
   `orderId` varchar(32) NOT NULL COMMENT '主键uuid',
   `orderNo` varchar(32) DEFAULT NULL COMMENT '订单号',
   `orderDetail` varchar(240) DEFAULT NULL COMMENT '订单详情',
+  `price` int default NOT NULL comment '订单金额',
   `createTime` varchar(24) DEFAULT NULL COMMENT '创建时间',
   `logicDel` char(1) DEFAULT NULL COMMENT '逻辑删除 Y:删除 N:未删除',
   `remark` varchar(240) DEFAULT NULL COMMENT '备注',

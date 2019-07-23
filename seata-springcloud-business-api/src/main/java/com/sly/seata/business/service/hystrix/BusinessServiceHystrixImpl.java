@@ -27,7 +27,7 @@ public class BusinessServiceHystrixImpl implements BusinessService {
 	 * @time 2019年6月12日
 	 */
 	@Override
-	public Map<String, Object> purchase(String accountId, String orderId, String storageId) {
+	public Map<String, Object> purchase(String accountId, String orderId, String storageId,Integer amount) {
 		Map<String, Object> result = new HashMap<>(16);
 		result.put("status", 400);
 		result.put("message", "调用付款服务失败！");

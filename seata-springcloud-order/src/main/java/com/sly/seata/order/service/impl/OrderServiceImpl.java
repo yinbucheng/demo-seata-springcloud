@@ -5,6 +5,7 @@ import java.util.Map;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,9 +38,9 @@ public class OrderServiceImpl implements OrderService {
 	 */
 	@Override
 	@SuppressWarnings("all")
+	@Transactional
 	public Map<String, Object> insert(@RequestBody Order order) {
 		log.info("===================xid:"+RootContext.getXID());
-		
 		orderMapper.insert(order);
 		Map<String, Object> result = new HashMap<>(16);
 		result.put("status", 200);

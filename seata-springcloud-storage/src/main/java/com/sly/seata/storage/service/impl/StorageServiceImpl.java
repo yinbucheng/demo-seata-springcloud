@@ -5,6 +5,7 @@ import java.util.Map;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,7 @@ import io.seata.core.context.RootContext;
 
 /**
  * 仓储service实现
- * 
+ *
  * @author sly
  * @time 2019年6月12日
  */
@@ -24,26 +25,26 @@ import io.seata.core.context.RootContext;
 @Slf4j
 public class StorageServiceImpl implements StorageService {
 
-	@Autowired
-	private StorageMapper storageMapper;
+    @Autowired
+    private StorageMapper storageMapper;
 
-	/**
-	 * 新增
-	 * 
-	 * @param storage
-	 * @return
-	 * @author sly
-	 * @time 2019年6月12日
-	 */
-	@Override
-	@SuppressWarnings("all")
-	public Map<String, Object> insert(@RequestBody Storage storage) {
-		log.info("==============xid:"+RootContext.getXID());
-		int a = 10/0;
-		storageMapper.insert(storage);
-		Map<String, Object> result = new HashMap<>(16);
-		result.put("status", 200);
-		result.put("message", "新增成功！");
-		return result;
-	}
+    /**
+     * 新增
+     *
+     * @param storage
+     * @return
+     * @author sly
+     * @time 2019年6月12日
+     */
+    @Override
+    @SuppressWarnings("all")
+    @Transactional
+    public Map<String, Object> insert(@RequestBody Storage storage) {
+        log.info("==============xid:" + RootContext.getXID());
+        storageMapper.insert(storage);
+        Map<String, Object> result = new HashMap<>(16);
+        result.put("status", 200);
+        result.put("message", "新增成功！");
+        return result;
+    }
 }

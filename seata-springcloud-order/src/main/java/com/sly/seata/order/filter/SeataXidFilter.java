@@ -21,6 +21,7 @@ import io.seata.core.context.RootContext;
  * @author sly
  * @time 2019年6月12日
  */
+@SuppressWarnings("all")
 public class SeataXidFilter extends OncePerRequestFilter {
 	protected Logger logger = LoggerFactory.getLogger(SeataXidFilter.class);
 

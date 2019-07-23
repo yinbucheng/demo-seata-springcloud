@@ -16,13 +16,17 @@ public class Account implements Serializable {
 	/** varchar(32) NOT NULL主键uuid */
 	private String accountId;
 	/** decimal(18,6) NULL金额 */
-	private BigDecimal amount;
+	private Integer amount;
 	/** varchar(32) NULL账户名称 */
 	private String accountName;
 	/** char(1) NULL逻辑删除 Y:删除 N:未删除 */
 	private String logicDel;
 	/** varchar(240) NULL备注 */
 	private String remark;
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
 
 	public String getAccountId() {
 		return accountId;
@@ -32,11 +36,11 @@ public class Account implements Serializable {
 		this.accountId = accountId;
 	}
 
-	public BigDecimal getAmount() {
+	public Integer getAmount() {
 		return amount;
 	}
 
-	public void setAmount(BigDecimal amount) {
+	public void setAmount(Integer amount) {
 		this.amount = amount;
 	}
 
@@ -63,5 +67,4 @@ public class Account implements Serializable {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-
 }

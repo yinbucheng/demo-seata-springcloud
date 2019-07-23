@@ -20,6 +20,7 @@ public class RequestHeaderInterceptor implements RequestInterceptor {
 
 	@Override
 	public void apply(RequestTemplate template) {
+		System.out.println("--------------Thead Interceptor:"+Thread.currentThread());
 		String xid = RootContext.getXID();
 		if (StringUtils.isNotBlank(xid)) {
 			template.header(SeataConstant.XID_HEADER, xid);

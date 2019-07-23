@@ -30,6 +30,6 @@ public interface BusinessService {
 	 */
 	@RequestMapping(value = "/business/purchase", method = RequestMethod.POST)
 	Map<String, Object> purchase(@RequestParam("accountId") String accountId, @RequestParam("orderId") String orderId,
-			@RequestParam("storageId") String storageId);
+			@RequestParam("storageId") String storageId,@RequestParam("amount")Integer amount);
 
 }

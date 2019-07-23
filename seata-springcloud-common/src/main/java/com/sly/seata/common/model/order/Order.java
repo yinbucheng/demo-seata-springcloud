@@ -25,6 +25,16 @@ public class Order implements Serializable {
 	/** varchar(240) NULL备注 */
 	private String remark;
 
+	private Integer price;
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
 	public String getOrderId() {
 		return orderId;
 	}

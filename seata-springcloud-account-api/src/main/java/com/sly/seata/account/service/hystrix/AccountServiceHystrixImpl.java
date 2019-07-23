@@ -33,4 +33,12 @@ public class AccountServiceHystrixImpl implements AccountService {
 		return result;
 	}
 
+	@Override
+	public Map<String, Object> decreaseAmount(String accountId, Integer amount) {
+		Map<String, Object> result = new HashMap<>(16);
+		result.put("status", 400);
+		result.put("message", "扣取用户账号失败！");
+		return result;
+	}
+
 }
