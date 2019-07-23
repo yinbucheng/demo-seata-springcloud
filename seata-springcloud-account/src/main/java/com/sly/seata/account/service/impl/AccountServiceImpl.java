@@ -3,6 +3,7 @@ package com.sly.seata.account.service.impl;
 import java.util.HashMap;
 import java.util.Map;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +20,7 @@ import io.seata.core.context.RootContext;
  * @time 2019年6月12日
  */
 @RestController
+@Slf4j
 public class AccountServiceImpl implements AccountService {
 
 	@Autowired
@@ -33,9 +35,9 @@ public class AccountServiceImpl implements AccountService {
 	 * @time 2019年6月12日
 	 */
 	@Override
+	@SuppressWarnings("all")
 	public Map<String, Object> insert(Account account) {
-		System.out.println(RootContext.getXID());
-		
+		log.info("=========xid:"+RootContext.getXID());
 		accountMapper.insert(account);
 		Map<String, Object> result = new HashMap<>(16);
 		result.put("status", 200);

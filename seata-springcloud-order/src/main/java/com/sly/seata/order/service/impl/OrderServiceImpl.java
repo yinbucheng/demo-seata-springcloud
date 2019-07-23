@@ -3,6 +3,7 @@ package com.sly.seata.order.service.impl;
 import java.util.HashMap;
 import java.util.Map;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +21,7 @@ import io.seata.core.context.RootContext;
  * @time 2019年6月12日
  */
 @RestController
+@Slf4j
 public class OrderServiceImpl implements OrderService {
 
 	@Autowired
@@ -34,8 +36,9 @@ public class OrderServiceImpl implements OrderService {
 	 * @time 2019年6月12日
 	 */
 	@Override
+	@SuppressWarnings("all")
 	public Map<String, Object> insert(@RequestBody Order order) {
-		System.out.println(RootContext.getXID());
+		log.info("===================xid:"+RootContext.getXID());
 		
 		orderMapper.insert(order);
 		Map<String, Object> result = new HashMap<>(16);

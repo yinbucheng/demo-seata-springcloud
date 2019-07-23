@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +33,7 @@ import io.seata.spring.annotation.GlobalTransactional;
  * @time 2019年6月12日
  */
 @RestController
+@Slf4j
 public class BusinessServiceImpl implements BusinessService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(BusinessService.class);
 
@@ -81,7 +83,7 @@ public class BusinessServiceImpl implements BusinessService {
 			account.setLogicDel("N");
 			account.setRemark("备注");
 			
-			System.out.println("xid" + RootContext.getXID());
+			log.info("============xid" + RootContext.getXID());
 			
 			Map<String, Object> insert = storageService.insert(storage);
 			if((int)insert.get("status") != 200) {
