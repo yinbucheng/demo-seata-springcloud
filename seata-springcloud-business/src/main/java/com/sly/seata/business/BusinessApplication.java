@@ -1,4 +1,4 @@
-package com.sly.seata;
+package com.sly.seata.business;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,8 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
- * web 启动类
- * 
+ * business 启动类
  * @author sly
  * @time 2019年6月12日
  */
@@ -18,10 +17,10 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableCircuitBreaker
 @SpringBootApplication
 @ComponentScan(basePackages="com.sly.seata")
-public class Application {
+public class BusinessApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(BusinessApplication.class, args);
 	}
 
 }

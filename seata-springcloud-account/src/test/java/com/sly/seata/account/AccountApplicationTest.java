@@ -1,4 +1,4 @@
-package com.sly.seata.order;
+package com.sly.seata.account;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ApplicationTest {
+public class AccountApplicationTest {
 
 	@Test
 	public void contextLoads() {

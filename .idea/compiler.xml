@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="seata-springcloud-account" />
+        <module name="seata-springcloud-account-api" />
+        <module name="seata-springcloud-business" />
+        <module name="seata-springcloud-business-api" />
+        <module name="seata-springcloud-common" />
+        <module name="seata-springcloud-eureka" />
+        <module name="seata-springcloud-order" />
+        <module name="seata-springcloud-order-api" />
+        <module name="seata-springcloud-storage" />
+        <module name="seata-springcloud-storage-api" />
+        <module name="seata-springcloud-web" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="seata-springcloud-account" options="-parameters" />
+      <module name="seata-springcloud-account-api" options="-parameters" />
+      <module name="seata-springcloud-business" options="-parameters" />
+      <module name="seata-springcloud-business-api" options="-parameters" />
+      <module name="seata-springcloud-common" options="-parameters" />
+      <module name="seata-springcloud-eureka" options="-parameters" />
+      <module name="seata-springcloud-order" options="-parameters" />
+      <module name="seata-springcloud-order-api" options="-parameters" />
+      <module name="seata-springcloud-storage" options="-parameters" />
+      <module name="seata-springcloud-storage-api" options="-parameters" />
+      <module name="seata-springcloud-web" options="-parameters" />
+    </option>
+  </component>
+</project>
